@@ -37,13 +37,11 @@ function HTMLToMD(parent, ctx) {
     img: (node, ctx, children) => {
       ctx.i_img++;
       const path = ctx.embeds.get(node.src) || '';
-      console.log('I>>', node, ctx.embeds);
       return `![${node.alt || ''}](${path} "${node.title || ''}")\n`;
     },
     svg: (node, ctx, children) => {
       ctx.i_svg++;
       const path = ctx.embeds.get(node) || '';
-      console.log('S>>', node, ctx.embeds);
       return `![${node.alt || ''}](${path} "${node.title || ''}")\n`;
     },
     h1: (node, ctx, children) => `# ${clearHash(children)}\n`,
