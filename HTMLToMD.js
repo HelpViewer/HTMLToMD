@@ -24,7 +24,7 @@ function HTMLToMD(parent, ctx) {
 
       ctx.listCounter[ctx.listStack.length-1] += 1;
       
-      const itemMarker = node.parentElement.tagName.toLowerCase() == 'ul' ? '-' : `${ctx.listCounter[ctx.listStack.length-1]}.`;
+      const itemMarker = node.parentElement.tagName.toLowerCase() != 'ol' ? '-' : `${ctx.listCounter[ctx.listStack.length-1]}.`;
       //${'  '.repeat(Math.max(0, ctx.listStack.length-1))}
       const reply = `${itemMarker} ${children}`;
 
