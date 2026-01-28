@@ -111,6 +111,7 @@ function HTMLToMD(parent, ctx) {
 
     script: (node, ctx, children) => '',
     style: (node, ctx, children) => '',
+    br: (node, ctx, children) => `\n${children}`,
 
     default: (node, ctx, children) => children
   };
