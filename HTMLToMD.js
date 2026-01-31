@@ -103,7 +103,7 @@ function HTMLToMD(parent, ctx) {
       if (children.trim().replace('\\#', '#').length == 1)
         return '';
       
-      let href = node.href || '';
+      let href = node.getAttribute('href') || '';
       //href = decodeURI(href);
       
       return `[${children}](${href} "${node.title}")`;
