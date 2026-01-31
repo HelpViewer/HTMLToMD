@@ -26,7 +26,7 @@ function HTMLToMD(parent, ctx) {
       
       const itemMarker = node.parentElement.tagName.toLowerCase() != 'ol' ? '-' : `${ctx.listCounter[ctx.listStack.length-1]}.`;
       //${'  '.repeat(Math.max(0, ctx.listStack.length-1))}
-      const reply = `${itemMarker} ${children}\n`;
+      const reply = `${itemMarker} ${children}`;
 
       if (!node.nextElementSibling) {
         ctx.listStack.pop();
