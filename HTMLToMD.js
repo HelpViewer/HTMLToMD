@@ -64,7 +64,7 @@ function HTMLToMD(parent, ctx) {
 
     code: (node, ctx, children) => {
       if (node.classList.length == 0)
-        return children;
+        return `\`\`\`${children}\`\`\``;
 
       const codeText = node.textContent;
       const prefix = 'language-';
